@@ -2,4 +2,4 @@ from starlette.applications import Starlette
 
 from .routes import routes
 
-app = Starlette(routes=routes, debug=True)
+app = Starlette(routes=routes)

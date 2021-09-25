@@ -15,19 +15,20 @@
 
     <link rel="stylesheet" href="style.css">
     <title>Lockbot</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="overscroll-top-background"></div>
-    <div id="overscroll-bottom-background"></div>
+<div id="overscroll-top-background"></div>
+<div id="blur-container">
     <header>
         <h1 id="page-title">LOCKBOT</h1>
     </header>
     <div id="container-background"></div>
-    <div class="container show" id="request-token">
+    <div class="container" id="request-access">
         <h1>Request Access</h1>
-        <form id="request-token-form">
+        <form id="request-access__form">
             <label class="form-input">
-                <input type="password" id="request-token__password" required>
+                <input type="password" id="request-access__password" required>
                 <span>Password</span>
             </label>
             <input class="btn btn-primary" type="submit" value="Request">
@@ -38,7 +39,7 @@
     <div class="container" id="awaiting-approval">
         <h1 class="anim-loading">Waiting for Approval</h1>
         <span class="label">Request ID</span>
-        <blockquote>incredible jelly</blockquote>
+        <blockquote id="awaiting-approval__nicename">&nbsp;</blockquote>
         <p>
             Contact the admin and let them know you're waiting for approval.
             Give them the code you see above.
@@ -47,7 +48,7 @@
     </div>
     <div class="container flat" id="unlock">
         <nav>
-            <div class="greeting">Hi, <span>Pranav</span>!</div>
+            <div class="greeting">Hi, <span id="unlock__username"></span>!</div>
             <button id="unlock__deauthorize" class="btn btn-inline">Deauthorize</button>
         </nav>
         <button id="unlock__unlock" class="btn btn-inverted btn-large">Unlock</button>
@@ -58,5 +59,14 @@
         </label>
         <footer>Built by <a href="https://github.com/preyneyv" target="_blank">@preyneyv</a> in 2021.</footer>
     </div>
+</div>
+<div id="offline-overlay" class="show">
+    <div>
+        <h1>Oh no!</h1>
+        <p>It would appear that we can't reach the bot! This means that
+            either you're offline, or the bot crashed, burned, and died.</p>
+        <p>We'll keep trying to make contact though.</p>
+    </div>
+</div>
 </body>
 </html>

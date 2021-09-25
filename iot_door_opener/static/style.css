@@ -51,16 +51,6 @@ blockquote {
     background: var(--gradient);
 }
 
-#overscroll-bottom-background {
-    position: fixed;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 50vh;
-    background: white;
-}
-
 header {
     padding: 20px 24px 24px 24px;
     position: fixed;
@@ -169,6 +159,8 @@ header {
     padding: 6px 12px;
     transition: border 300ms;
     outline: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-input > input:focus {
@@ -240,7 +232,6 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     color: inherit;
-    transition: opacity 300ms;
 }
 
 .btn-inline {
@@ -294,4 +285,76 @@ nav {
 
 .greeting {
     font-size: 20px;
+}
+
+/* Offline Overlay */
+body.offline {
+    overflow: hidden;
+}
+
+body.offline #blur-container {
+    filter: blur(4px);
+}
+body.offline #blur-container *,
+body.offline #blur-container *::before,
+body.offline #blur-container *::after {
+    animation-play-state: paused;
+}
+
+#offline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom left, rgba(33, 74, 102, 0.9), rgba(52, 40, 77, 0.9)) fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+body.offline #offline-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#offline-overlay > div {
+    width: calc(100vw - 64px);
+    transform: translate(0, 5vh);
+    transition: transform 300ms;
+}
+
+body.offline #offline-overlay > div {
+    transform: none;
+}
+
+#offline-overlay h1 {
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    padding-left: 56px;
+    position: relative;
+}
+
+@keyframes wiggle {
+    0% {transform: rotate(-3deg)}
+    50% {transform: rotate(3deg)}
+    100% {transform: rotate(-3deg)}
+}
+
+#offline-overlay h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 40px;
+    height: 40px;
+    background: url(images/offline.png) no-repeat;
+    background-size: contain;
+    animation: .4s ease-in-out wiggle infinite;
 }

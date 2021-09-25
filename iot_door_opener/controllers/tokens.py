@@ -13,7 +13,7 @@ log = logger.getChild('Tokens')
 async def request(req: Request) -> JSONResponse:
     """Request for a new token."""
     idx, nicename = database.create_token_request()
-    data = await req.form()
+    data = await req.json()
     password = data.get('password', None)
 
     if not validate_request_password(password):
@@ -69,5 +69,6 @@ async def status(req: Request) -> JSONResponse:
     return JSONResponse({
         'status': 'Approved!',
         'approved': True,
-        'token': access_token
+        'token': access_token,
+        'name': name
     })

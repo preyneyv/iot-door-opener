@@ -10,7 +10,6 @@ log = logger.getChild('Door')
 
 
 def unlock(req: Request) -> JSONResponse:
-    l = log.getChild('Unlock')
     try:
         token = get_token_from_request(req)
     except KeyError:
@@ -24,13 +23,13 @@ def unlock(req: Request) -> JSONResponse:
     try:
         data = decode_access_token(token)
     except InvalidTokenError:
-        l.error(f'Rejected. Invalid token. ({token})')
+        log.getChild('Unlock').error(f'Rejected. Invalid token. ({token})')
         return JSONResponse({
             'status': 'Invalid token!'
         }, status_code=401)
 
     name = data['name']
-    l.info(f'Accepted. {name} opened the door.')
+    log.getChild('Unlock').info(f'Accepted. {name} opened the door.')
     return JSONResponse({
         'status': 'Opening!',
         'approved': True

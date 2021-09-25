@@ -3,7 +3,7 @@ from pathlib import Path
 from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
 
-from .controllers import tokens, door
+from .controllers import tokens, door, ping
 
 routes = [
     Mount('/tokens', routes=[
@@ -12,6 +12,7 @@ routes = [
     ]),
 
     Route('/door/unlock', door.unlock, methods=['POST']),
+    Route('/ping', ping.ping),
 
     Mount('/', name='static',
           app=StaticFiles(directory=Path(__file__).parent.joinpath('static'),
