@@ -14,13 +14,13 @@
     <meta name="theme-color" content="#459DD6">
 
     <link rel="stylesheet" href="style.css">
-    <title>EZ KeyZ</title>
+    <title>Lockbot</title>
 </head>
 <body>
     <div id="overscroll-top-background"></div>
     <div id="overscroll-bottom-background"></div>
     <header>
-        <h1 id="page-title">EZ KeyZ</h1>
+        <h1 id="page-title">LOCKBOT</h1>
     </header>
     <div id="container-background"></div>
     <div class="container show" id="request-token">
@@ -48,12 +48,12 @@
     <div class="container flat" id="unlock">
         <nav>
             <div class="greeting">Hi, <span>Pranav</span>!</div>
-            <button class="btn btn-inline">Deauthorize</button>
+            <button id="unlock__deauthorize" class="btn btn-inline">Deauthorize</button>
         </nav>
-        <button class="btn btn-inverted btn-large">Unlock</button>
+        <button id="unlock__unlock" class="btn btn-inverted btn-large">Unlock</button>
         <label class="checkbox-input">
             Unlock on App Launch
-            <input type="checkbox" id="auto-unlock">
+            <input type="checkbox" id="unlock__automatic">
             <span class="checkmark"></span>
         </label>
         <footer>Built by <a href="https://github.com/preyneyv" target="_blank">@preyneyv</a> in 2021.</footer>

@@ -69,6 +69,7 @@ header {
 
 #page-title {
     font-size: 60px;
+    letter-spacing: -3px;
     margin: 0 0 0 64px;
     position: relative;
 }
