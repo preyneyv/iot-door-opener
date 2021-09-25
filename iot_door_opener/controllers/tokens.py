@@ -5,6 +5,9 @@ from starlette.responses import JSONResponse
 from .. import database
 from ..helpers import validate_request_password, get_token_from_request
 from ..jwt import decode_status_token, create_access_token, create_status_token
+from ..logging import logger
+
+log = logger.getChild('Tokens')
 
 
 async def request(req: Request) -> JSONResponse:
@@ -19,7 +22,8 @@ async def request(req: Request) -> JSONResponse:
         }, status_code=401)
 
     token = create_status_token(idx)
-
+    log.getChild('Request')\
+        .info(f'New token request. {idx}:"{nicename}"')
     return JSONResponse({
         'token': token,
         'nicename': nicename
@@ -40,6 +44,8 @@ async def status(req: Request) -> JSONResponse:
     try:
         data = decode_status_token(token)
     except InvalidTokenError:
+        log.getChild('Status')\
+            .error(f'Rejected. Invalid token. ({token})')
         return JSONResponse({
             'status': 'Invalid token!'
         }, status_code=401)

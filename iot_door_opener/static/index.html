@@ -1,1 +1,62 @@
-coolio
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/touch/icons/192x192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#459DD6">
+
+    <link rel="stylesheet" href="style.css">
+    <title>EZ KeyZ</title>
+</head>
+<body>
+    <div id="overscroll-top-background"></div>
+    <div id="overscroll-bottom-background"></div>
+    <header>
+        <h1 id="page-title">EZ KeyZ</h1>
+    </header>
+    <div id="container-background"></div>
+    <div class="container show" id="request-token">
+        <h1>Request Access</h1>
+        <form id="request-token-form">
+            <label class="form-input">
+                <input type="password" id="request-token__password" required>
+                <span>Password</span>
+            </label>
+            <input class="btn btn-primary" type="submit" value="Request">
+        </form>
+
+        <footer>Built by <a href="https://github.com/preyneyv" target="_blank">@preyneyv</a> in 2021.</footer>
+    </div>
+    <div class="container" id="awaiting-approval">
+        <h1 class="anim-loading">Waiting for Approval</h1>
+        <span class="label">Request ID</span>
+        <blockquote>incredible jelly</blockquote>
+        <p>
+            Contact the admin and let them know you're waiting for approval.
+            Give them the code you see above.
+        </p>
+        <footer>Built by <a href="https://github.com/preyneyv" target="_blank">@preyneyv</a> in 2021.</footer>
+    </div>
+    <div class="container flat" id="unlock">
+        <nav>
+            <div class="greeting">Hi, <span>Pranav</span>!</div>
+            <button class="btn btn-inline">Deauthorize</button>
+        </nav>
+        <button class="btn btn-inverted btn-large">Unlock</button>
+        <label class="checkbox-input">
+            Unlock on App Launch
+            <input type="checkbox" id="auto-unlock">
+            <span class="checkmark"></span>
+        </label>
+        <footer>Built by <a href="https://github.com/preyneyv" target="_blank">@preyneyv</a> in 2021.</footer>
+    </div>
+</body>
+</html>
