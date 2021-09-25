@@ -3,8 +3,8 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 
 from .. import database
-from ..helpers import validate_request_password
-from ..jwt import decode_status_token, create_access_token
+from ..helpers import validate_request_password, get_token_from_request
+from ..jwt import decode_status_token, create_access_token, create_status_token
 
 
 async def request(req: Request) -> JSONResponse:
@@ -18,18 +18,24 @@ async def request(req: Request) -> JSONResponse:
             'status': 'Invalid password!'
         }, status_code=401)
 
+    token = create_status_token(idx)
+
     return JSONResponse({
-        'id': idx,
+        'token': token,
         'nicename': nicename
     }, status_code=202)
 
 
 async def status(req: Request) -> JSONResponse:
     try:
-        token = req.headers['Authorization']
+        token = get_token_from_request(req)
     except KeyError:
         return JSONResponse({
             'status': 'No token provided!'
+        }, status_code=401)
+    except AssertionError:
+        return JSONResponse({
+            'status': 'Invalid authentication type!'
         }, status_code=401)
     try:
         data = decode_status_token(token)

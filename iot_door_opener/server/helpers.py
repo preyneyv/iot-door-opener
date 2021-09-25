@@ -40,6 +40,13 @@ def static_path(*parts):
 def validate_request_password(pwd):
     return pwd == env('IDO_REQUEST_PWD')
 
+
+def get_token_from_request(req):
+    method, token = req.headers['Authorization'].split()
+    assert method == 'Bearer'
+    return token
+
+
 def _get_word_list():
     """
     Load or download wordlists. Return tuple of adjectives and nouns.
