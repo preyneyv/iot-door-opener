@@ -167,6 +167,11 @@ const awaitingApprovalScene = new class extends Scene {
 
         if (!response.ok) {
             switch (response.status) {
+                case 400:
+                    alert('Request denied.')
+                    ls.clear()
+                    engine.switchTo('request')
+                    break
                 case 401:
                     alert(`An unexpected error occurred:\n` +
                           await response.text())

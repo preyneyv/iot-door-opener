@@ -11,7 +11,6 @@ government
 health
 system
 computer
-meat
 year
 thanks
 music
@@ -74,7 +73,6 @@ policy
 series
 thought
 basis
-boyfriend
 direction
 strategy
 technology
@@ -99,7 +97,6 @@ audience
 fishing
 growth
 income
-marriage
 user
 combination
 failure
@@ -142,7 +139,6 @@ population
 president
 unit
 category
-cigarette
 context
 introduction
 opportunity
@@ -155,7 +151,6 @@ newspaper
 relationship
 teaching
 cell
-dealer
 finding
 lake
 member
@@ -166,13 +161,11 @@ appearance
 association
 concept
 customer
-death
 discussion
 housing
 inflation
 insurance
 mood
-woman
 advice
 blood
 effort
@@ -200,13 +193,11 @@ recipe
 studio
 topic
 collection
-depression
 imagination
 passion
 percentage
 resource
 setting
-ad
 agency
 college
 connection
@@ -228,7 +219,6 @@ response
 selection
 storage
 version
-alcohol
 argument
 complaint
 contract
@@ -238,10 +228,8 @@ loss
 membership
 possession
 preparation
-steak
 union
 agreement
-cancer
 currency
 employment
 engineering
@@ -252,7 +240,6 @@ preference
 region
 republic
 tradition
-virus
 actor
 classroom
 delivery
@@ -351,7 +338,6 @@ tooth
 town
 vehicle
 volume
-wife
 accident
 airport
 appointment
@@ -533,7 +519,6 @@ care
 group
 risk
 word
-fat
 force
 key
 light
@@ -1110,7 +1095,6 @@ entrance
 fault
 grass
 guy
-hell
 highlight
 incident
 island
