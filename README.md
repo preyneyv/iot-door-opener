@@ -1,4 +1,4 @@
-# IoT Door Opener
+# Lockbot
 I don't like opening doors. Keys are annoying. An alternative is presently being
 created.
 
