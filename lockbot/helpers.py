@@ -25,7 +25,7 @@ def data_path(*parts):
     :param parts: path segments
     :return: complete path
     """
-    return Path(env('IDO_DATA_FOLDER')).joinpath(*parts)
+    return Path(env('LOCKBOT_DATA_FOLDER')).joinpath(*parts)
 
 
 def static_path(*parts):
@@ -38,7 +38,7 @@ def static_path(*parts):
 
 
 def validate_request_password(pwd):
-    return pwd == env('IDO_REQUEST_PWD')
+    return pwd == env('LOCKBOT_REQUEST_PWD')
 
 
 def get_token_from_request(req):

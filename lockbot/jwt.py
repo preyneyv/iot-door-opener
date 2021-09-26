@@ -2,7 +2,7 @@ import jwt
 
 from .helpers import env
 
-KEY = env('IDO_JWT_SECRET')
+KEY = env('LOCKBOT_JWT_SECRET')
 
 
 def _create_token(data):
