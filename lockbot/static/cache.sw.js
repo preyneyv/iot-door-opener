@@ -1,4 +1,4 @@
-const cacheName = 'lockbot-v1.0.1';
+const cacheName = 'lockbot-v1.0.2';
 const appShellFiles = [
     '/',
     '/index.html',
