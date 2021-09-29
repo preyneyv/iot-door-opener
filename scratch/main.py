@@ -33,20 +33,17 @@ def turn(steps):
 
 if __name__ == "__main__":
     try:
-        # s = 0
+        s = 0
         while True:
-            # turn(2)
-            # s += 2
-            # time.sleep(1)
-            # print(f"{s} steps!")
+            turn(2)
+            s += 2
+            time.sleep(1)
+            print(f"{s} steps!")
             # try:
             #     s = int(input('How many steps?\n> '))
             # except ValueError:
-            #     print('Invalid number!')
-            #     continue
+                # print('Invalid number!')
+                # continue
             # turn(s)
-            input("Press enter to open!")
-            wind()
-            turn(300)
     finally:
         GPIO.cleanup()
