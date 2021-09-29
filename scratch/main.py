@@ -23,11 +23,11 @@ def wind():
 
 def turn(steps):
     GPIO.output(slp_pin, GPIO.HIGH)
-    motor.motor_go(False, "Full", steps, .0002, False, .05)
-    time.sleep(4)
-    print('1 more second!')
-    time.sleep(1)
-    motor.motor_go(True, "Full", steps, .0002, False, .05)
+    motor.motor_go(False, "Full", steps, .003, False, .05)
+    # time.sleep(4)
+    # print('1 more second!')
+    # time.sleep(1)
+    # motor.motor_go(True, "Full", steps, .0002, False, .05)
     GPIO.output(slp_pin, GPIO.LOW)
 
 
